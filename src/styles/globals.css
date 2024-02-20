@@ -1,0 +1,8 @@
+.mainBackground{
+    background: url("/assets/fondo.jpg"), radial-gradient(79.25% 140.89% at 17.13% 28.67%, #000000 0%, #3A3A3A 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 200% 200%;
+    background-origin: content-box;
+}
