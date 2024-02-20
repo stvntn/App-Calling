@@ -28,7 +28,7 @@ export const Menu: React.FC = () => {
 
                 <ListItemButton><HomeIcon style={{color:'white'}}/></ListItemButton>
             </div>
-
+{/* HOla */}
             <Image src='/assets/menu/avatar.svg' alt='avatar' width={46} height={46} />
         </div>
     );
