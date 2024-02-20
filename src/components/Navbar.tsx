@@ -13,7 +13,7 @@ import Divider from '@mui/material/Divider';
 export const Navbar: React.FC = () => { 
     return (        
         <AppBar className={style.barApp}>
-          <Toolbar>
+          <Toolbar sx={{ padding: '0px !important'}}>
             <IconButton>
                 <ChevronLeftIcon fontSize='large' className={style.buttonNavbar}/>
             </IconButton>
@@ -21,8 +21,8 @@ export const Navbar: React.FC = () => {
                 Design Critique - Nickelfox Website  
             </h1>
             <div className={style.personCounting}>
-                <PeopleAltIcon sx={{width:'17px'}}/>
-                <Typography fontSize='13px'>15+</Typography>
+                <PeopleAltIcon sx={{width:'13px', marginRight: '3px'}}/>
+                <Typography fontSize='11px'>15+</Typography>
             </div>
           </Toolbar>
           <Divider className={style.divi}/>

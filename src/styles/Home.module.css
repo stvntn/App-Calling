@@ -7,49 +7,55 @@
     font-size: medium;
     position:static;
     background-color: transparent;
-    padding: 0px 50px;
+    padding: 7px 0px;
     box-shadow: none;
-    padding-left: 50px;
-    padding-right: 550px;
+    width: 100%;
+}
+
+.barApp .MuiToolbar-root{
+    width: 100%;
 }
 
 .tituloNavbar{
     margin: 0px 20px;
     font-size: 20px;
+    font-weight: 400;
     color: white;    
 }
 
 .buttonNavbar{
-    background-color: rgba(125, 145, 170, 1);
+    background-color: #354657;
     color: white;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 5px;
     padding: 3px;     
 }
 
 .personCounting{
-    width: 65px;
-    height: 26px;
-    background-color: rgba(125, 145, 170, 1);
+    width: 60px;
+    height: 23px;
+    background-color: #354657;
     color: white;
     border-radius: 5px;
     display: flex;
     justify-content: center;
-    
+    align-items: center;
 }
 
 .divi{
     height: 0.5px;    
     border-color: rgba(125, 145, 170, 1);
-    margin-left: 32px;    
+    margin-left: 0px;    
 }
 
                         /* Menu */
 .menuIconos{
-    width: 60px;
+    left: 0px;
+    width: 90px;
     height: 100vh;
     display: flex;
+    position: fixed;
     flex-direction: column;
     justify-content: space-between;
     border-right: solid 1px;
@@ -69,7 +75,8 @@
                         /* videollamada */
 .configVideocall{    
     padding-left: 20px;
-    padding-right: 150px;     
+    padding-right: 20px;     
+    width: 100%;
 }
 
 .headerButton{
@@ -88,30 +95,70 @@
 }
 
 .prueba1{
-    width: 540px;
-    height: 420px;
+    width: 100%;
+    position: relative;
 }
 
 .buttonPhoto1{    
     position: absolute;
-    top: 480px;
-    left: 220px;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttonVideocall{
     background-color:rgba(0, 0, 0, 0.52);
-    margin: 0px 10px;       
+    margin: 0px 1%;      
+    width: 4%;
+    max-width: 42px;
+    aspect-ratio: 1;
+    height: auto;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonVideocallCenter{
+    margin: 0px 1%;      
+    width: 6%;
+    max-width: 62px;
+    border-radius: 1%;
+    aspect-ratio: 1;
+    height: auto;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonVideocallCenter svg{
+    width: 60%;
+    aspect-ratio: 1;
+    height: auto;
+}
+
+
+.buttonVideocall svg{
+    width: 60%;
 }
 
 .photo1{
     width: 100%;
-    height: 100%;
-    border-radius: 5px;    
+    aspect-ratio: 1.5 !important;
+    height: auto;
+    max-height: calc(100vh - 200px);
+    border-radius: 5px;  
 }
 
 .memberPhoto{
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    aspect-ratio: 1;
+    height: auto;
     margin-bottom: 10px;
     border-radius: 5px;
 }
@@ -120,13 +167,14 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 120px;
-    right: 700px;
+    top: 20px;
+    right: 20px;
+    width: 8%;
 }
 
 .footVideocall{
     display: flex;
-    margin-top: 45px;
+    margin-top: 15px;
 }
 
 .footerWritten{
@@ -135,11 +183,17 @@
 
                         /* CHAT */
 .firstSectionChat{
-    width: 30%;
+    width: 370px;
+    min-width: 370px;
+    max-width: 370px;
     height: 100%;
     background-color: rgb(255, 255, 255, 0.1);    
+    backdrop-filter: blur(10px);
     padding: 15px;
     border-radius: 20px;  
+    margin-right: 25px;
+    margin-top: 22px;
+    margin-bottom: 22px;
 }
 
 .headButtons{
@@ -173,4 +227,10 @@
     margin-top: 5px;
     border-radius: 8px;
     padding: 5px;
+}
+
+.mainAppContainer{
+    display: flex;
+    width: 100%;
+    padding-left: 90px;
 }

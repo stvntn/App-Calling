@@ -1,8 +1,95 @@
+/* futura-100 - Sans-serif */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 100;
+    src: url('/fonts/Futura-Thin.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('/fonts/Futura-Thin.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* futura-200 - Sans-serif */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 200;
+    src: url('/fonts/Futura-Light.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('/fonts/Futura-Light.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* futura-300 - Sans-serif */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/Futura-Light.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('/fonts/Futura-Light.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* futura-regular - Sans-serif */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Futura-Medium.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('/fonts/Futura-Medium.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* futura-500 - Sans-serif */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/Futura.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('/fonts/Futura.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* futura-600 - Sans-serif */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/Futura-Heavy.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('/fonts/Futura-Heavy.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* futura-700 - Sans-serif */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/Futura-Bold.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('/fonts/Futura-Bold.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* futura-800 - Sans-serif */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/Futura-Bold.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('/fonts/Futura-Bold.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* futura-900 - Sans-serif */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Futura';
+    font-style: normal;
+    font-weight: 900;
+    src: url('/fonts/Futura-Black.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        url('/fonts/Futura-Black.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+* {
+    font-family: Futura, sans-serif;
+}
+
 .mainBackground{
     background: url("/assets/fondo.jpg"), radial-gradient(79.25% 140.89% at 17.13% 28.67%, #000000 0%, #3A3A3A 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: 200% 200%;
+    background-size: 135% 135%;
     background-origin: content-box;
+    min-height: 100vh;
 }

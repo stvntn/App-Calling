@@ -44,7 +44,7 @@ const theme = createTheme({
     },
     typography: {
       fontFamily: [
-        'Satoshi',
+        'Futura',
         'sans-serif',
       ].join(','),
    },

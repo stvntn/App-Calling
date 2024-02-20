@@ -3,7 +3,7 @@ import style from '../styles/Home.module.css'
 import Image from 'next/image';
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
-
+import { Navbar } from './Navbar';
 
 import AddIcon from '@mui/icons-material/Add';
 import UnarchiveIcon from '@mui/icons-material/Unarchive';
@@ -15,6 +15,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 export const VideoCall: React.FC = () => { 
     return (
         <div className={style.configVideocall}>
+            <Navbar />
             <div className={style.headerButton}>
                 <div className={style.headerButton1}>
                     <Image src='/assets/videocall/record.svg' alt='record' width={16} height={16} />
@@ -33,19 +34,19 @@ export const VideoCall: React.FC = () => {
                     <Image src='/assets/videocall/foto1.jpg' alt='foto1' width={831} height={681} className={style.photo1}/>
                     <div className={style.buttonPhoto1}>
                         <IconButton className={style.buttonVideocall}>
-                            <UnarchiveIcon fontSize='small' style={{color:'white'}}/>
+                            <UnarchiveIcon style={{color:'white'}}/>
                         </IconButton>
                         <IconButton className={style.buttonVideocall}>
-                            <VideocamIcon fontSize='small' style={{color:'white'}}/>
+                            <VideocamIcon style={{color:'white'}}/>
                         </IconButton> 
-                        <IconButton style={{backgroundColor:'red', borderRadius:'5px'}}>
-                            <CallEndIcon fontSize='large' style={{color:'white'}} />
-                        </IconButton> 
-                        <IconButton className={style.buttonVideocall}>
-                            <KeyboardVoiceIcon fontSize='small' style={{color:'white'}}/>
+                        <IconButton style={{backgroundColor:'red', borderRadius:'5px'}} className={style.buttonVideocallCenter}>
+                            <CallEndIcon  style={{color:'white'}} />
                         </IconButton> 
                         <IconButton className={style.buttonVideocall}>
-                            <SettingsIcon fontSize='small' style={{color:'white'}}/>
+                            <KeyboardVoiceIcon style={{color:'white'}}/>
+                        </IconButton> 
+                        <IconButton className={style.buttonVideocall}>
+                            <SettingsIcon style={{color:'white'}}/>
                         </IconButton>
                     </div>    
                 </div>
