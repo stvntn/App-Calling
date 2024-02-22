@@ -16,15 +16,15 @@ export const Menu: React.FC = () => {
             <Image src='/assets/menu/Logo.svg' alt='logo' width={50} height={50} className={style.logoMenu} />
             
             <div className='iconBotones'>
-                <ListItemButton><NotificationsIcon style={{color:'white'}}/></ListItemButton>
+                <ListItemButton><NotificationsIcon style={{color:'white', marginBottom:'10px'}}/></ListItemButton>
                 
-                <ListItemButton><PersonIcon style={{color:'white'}}/></ListItemButton>
+                <ListItemButton><PersonIcon style={{color:'white', marginBottom:'10px'}}/></ListItemButton>
 
-                <ListItemButton><PollIcon style={{color:'white'}}/></ListItemButton> 
+                <ListItemButton><PollIcon style={{color:'white', marginBottom:'10px'}}/></ListItemButton> 
 
-                <ListItemButton><EventNoteIcon style={{color:'white'}}/></ListItemButton>
+                <ListItemButton><EventNoteIcon style={{color:'white', marginBottom:'10px'}}/></ListItemButton>
 
-                <ListItemButton><VideocamIcon style={{color:'white'}}/></ListItemButton>
+                <ListItemButton><VideocamIcon style={{color:'white', marginBottom:'10px'}}/></ListItemButton>
 
                 <ListItemButton><HomeIcon style={{color:'white'}}/></ListItemButton>
             </div>

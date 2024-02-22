@@ -93,3 +93,25 @@
     background-origin: content-box;
     min-height: 100vh;
 }
+
+@media (max-width: 430px){
+    .mainBackground{
+        display: none;
+    }
+}
+
+.mainMobile{
+    background-color: rgba(0, 0, 0, 0.9);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 135% 135%;
+    background-origin: content-box;
+    min-height: 100vh;
+}
+
+@media (min-width: 430px){
+    .mainMobile{
+        display: none;
+    }
+}

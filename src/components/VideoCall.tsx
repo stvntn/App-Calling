@@ -4,7 +4,10 @@ import Image from 'next/image';
 import IconButton from '@mui/material/IconButton'
 import Typography from '@mui/material/Typography'
 import { Navbar } from './Navbar';
+import Slider from '@mui/material/Slider';
+import Paper from '@mui/material/Paper';
 
+import VolumeUp from '@mui/icons-material/VolumeUp';
 import AddIcon from '@mui/icons-material/Add';
 import UnarchiveIcon from '@mui/icons-material/Unarchive';
 import VideocamIcon from '@mui/icons-material/Videocam';
@@ -12,7 +15,26 @@ import CallEndIcon from '@mui/icons-material/CallEnd';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import SettingsIcon from '@mui/icons-material/Settings';
 
-export const VideoCall: React.FC = () => { 
+export const VideoCall: React.FC = () => {
+    
+    const [value, setValue] = React.useState(30);
+
+    const handleSliderChange = (event: Event, newValue: number | number[]) => {
+        setValue(newValue as number);
+    };
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value === '' ? 0 : Number(event.target.value));
+    };
+
+    const handleBlur = () => {
+        if (value < 0) {
+        setValue(0);
+        } else if (value > 100) {
+        setValue(100);
+        }
+    };
+
     return (
         <div className={style.configVideocall}>
             <Navbar />
@@ -25,14 +47,29 @@ export const VideoCall: React.FC = () => {
                     <IconButton>
                         <AddIcon style={{color:'white', backgroundColor:'rgba(64, 89, 115, 1)', borderRadius:'5px'}}/>
                     </IconButton>
-                    <Typography style={{color:'black', fontSize:'10px', marginTop:'12px'}}>Add user to the call</Typography>
+                    <Typography style={{color:'white', fontSize:'10px'}}>Add user to the call</Typography>
                 </div>
             </div>
 
             <div className={style.prueba1}>
                 <div>
-                    <Image src='/assets/videocall/foto1.jpg' alt='foto1' width={831} height={681} className={style.photo1}/>
-                    <div className={style.buttonPhoto1}>
+                    <Image src='/assets/videocall/foto1.jpg' alt='foto1' width={831} height={681} priority className={style.photo1}/>
+
+                        <Paper className={style.sliderVolumen}>
+                            
+                                <Slider
+                                    value={typeof value === 'number' ? value : 100}
+                                    defaultValue={40}
+                                    onChange={handleSliderChange}                                    
+                                    orientation="vertical"
+                                    valueLabelDisplay="auto"
+                                    style={{height:'100%', width:'5%', marginTop:'10px'}}                                                                    
+                                />                            
+                                <VolumeUp fontSize='small' sx={{mt:'5px'}}/>
+                                              
+                        </Paper>
+                    
+                    <div className={style.buttonPhoto1}>                        
                         <IconButton className={style.buttonVideocall}>
                             <UnarchiveIcon style={{color:'white'}}/>
                         </IconButton>

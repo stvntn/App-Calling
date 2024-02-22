@@ -10,26 +10,19 @@ import ListItemText from '@mui/material/ListItemText'
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import Slider from '@mui/material/Slider'
+import LinearProgress, { LinearProgressProps } from '@mui/material/LinearProgress';
 
 import Image from 'next/image';
 
-import FormControl, { useFormControl } from '@mui/material/FormControl';
+import FormControl from '@mui/material/FormControl';
 import InputBase from '@mui/material/InputBase';
 import IconButton from '@mui/material/IconButton'
 
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import SendIcon from '@mui/icons-material/Send';
 
-export const Chat: React.FC = () => {
-    
-    const [value, setValue] = React.useState<number>();    
+export const Chat: React.FC = () => {   
 
-    const handleChange = (event: Event, newValue: number | number[]) => {
-        setValue(newValue as number);
-      };
-
-      
     return (
         <div className={style.firstSectionChat}>
             <div className={style.headButtons}>
@@ -40,23 +33,23 @@ export const Chat: React.FC = () => {
                     Participants
                 </Button>                
             </div>
-            <Divider sx={{margin:'20px 0px', color:'white'}} />
+            <Divider color='grey' sx={{margin:'20px 0px', height:'2px'}} />
             <div className={style.secondSectionChat}>
-                <Typography color='primary' fontSize='16px' mb='10px'>
+                <Typography color='primary' fontSize='14px' mb='10px'>
                     Use of Graphics
                 </Typography>
                 <Divider sx={{mb:'10px', width:'100%', bgcolor:'rgba(255, 255, 255, 0.5)'}}/>
-                <div>
-                    <Slider size="small" aria-label="Volume" value={value} onChange={handleChange} defaultValue={25} className={style.MuiSliderThumb}/>
+                <div className={style.firstSliderChat}>
+                    <LinearProgress color="primary" variant="determinate" value={25} />
                     <Typography color='rgba(255, 255, 255, 0.5)' fontSize='12px'>Illustrations</Typography>
                 </div>
                 <div className={style.secondSliderChat}>
-                    <Slider size="small" aria-label="Volume" value={value} onChange={handleChange}  defaultValue={75}/>
+                    <LinearProgress color="primary" variant="determinate" value={75} />
                     <Typography color='rgba(255, 255, 255, 0.5)' fontSize='12px'>Images</Typography>
                 </div>
             </div>
-            <div style={{ position: 'relative', width: '100%' }}>
-                <Divider sx={{mt:'30px', border:'none'}}>
+            <div style={{ width: '100%', marginTop:'20px' }}>
+                <Divider>
                     <Typography color='primary' fontSize='12px'>
                         Messages
                     </Typography>
@@ -153,7 +146,7 @@ export const Chat: React.FC = () => {
                 <FormControl sx={{flexGrow:'1', ml:'5px'}}>                    
                    <InputBase
                     placeholder='Write message here'                    
-                    style={{color:'white', fontSize:'14px'}}
+                    style={{color:'white', fontSize:'12px'}}
                    />                
                 </FormControl>
                 <IconButton >
