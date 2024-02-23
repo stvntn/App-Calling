@@ -115,3 +115,52 @@
         display: none;
     }
 }
+
+:root {
+    --scrollbar-color: #cfcecd;
+    --scrollbar-background: #e4e2e100;
+}
+
+/* ESTILOS DEL SCROLL */
+body, 
+.styled-overflow  {
+    scrollbar-color: #cfcecd transparent !important;
+}
+
+/* Tamaño del scroll */
+body::-webkit-scrollbar, 
+.styled-overflow-y::-webkit-scrollbar{
+    width: 4px;
+    height: 10px;
+}
+/* Estilos barra (thumb) de scroll */
+body::-webkit-scrollbar-thumb, 
+.styled-overflow::-webkit-scrollbar-thumb {
+    background:  var(--scrollbar-color)!important;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:active, 
+.styled-overflow::-webkit-scrollbar-thumb:active {
+    background-color: #cfcecd;
+}
+
+body::-webkit-scrollbar-thumb:hover, 
+.styled-overflow::-webkit-scrollbar-thumb:hover {
+    background: #F5F0EB;
+    box-shadow: 0 0 0px 0px #cfcecd;
+}
+
+ /* Estilos track de scroll */
+body::-webkit-scrollbar-track, 
+.styled-overflow::-webkit-scrollbar-track {
+    background: var(--scrollbar-background)!important;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track:hover,
+body::-webkit-scrollbar-track:active,
+.styled-overflow::-webkit-scrollbar-track:hover,
+.styled-overflow::-webkit-scrollbar-track:active {
+    background: #F5F0EB;
+}

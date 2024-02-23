@@ -282,19 +282,28 @@
 .headToolbar{
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
+.groupButtonHead{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
 
-.groupButtonHead Button{   
+.buttomHeadGroup{  
     text-transform: capitalize;
     font-size: 16px;
-    font-weight: 400; 
+    font-weight: 300;    
 }
 
     /* ChatMobile */
-.classChat{
+.classChat{    
     padding: 0px 20px;
-    padding-bottom: 10px;    
+    padding-bottom: 10px;
+    overflow-x: auto;
+    max-height: 450px;    
 }
 
     /* VideoCallMobile */
@@ -322,7 +331,7 @@
     width: 320px;
     padding: 5px 15px;
     align-items: center;
-    top: 205%;
+    top: 83%;
 }
 
 .memberVideoCallMobile{

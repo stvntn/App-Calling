@@ -14,8 +14,10 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import CallEndIcon from '@mui/icons-material/CallEnd';
 import MicIcon from '@mui/icons-material/Mic';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import MicOffIcon from '@mui/icons-material/MicOff';
+import GraphicEqIcon from '@mui/icons-material/GraphicEq';
 
-export const VideoCallMobile: React.FC<{handleSetMode: (mode: string) => void}>= (handleSetMode) => {
+export const VideoCallMobile: React.FC<{handleSetMode: (mode: string) => void}>= ({handleSetMode}) => {
 
     return (
         <div className={style.mainVideoCallMobile}>
@@ -60,10 +62,10 @@ export const VideoCallMobile: React.FC<{handleSetMode: (mode: string) => void}>=
                 </Paper>
             </div>
             <div className={style.memberVideoCallMobile}>
-                <Image src='/assets/videocall/foto2.jpg' alt='foto2' width={94} height={90} className={style.memberPhotoMobile}/>
-                <Image src='/assets/videocall/foto3.jpg' alt='foto3' width={94} height={90} className={style.memberPhotoMobile}/>
-                <Image src='/assets/videocall/foto4.jpg' alt='foto4' width={94} height={90} className={style.memberPhotoMobile}/>
-                <Image src='/assets/videocall/foto5.jpg' alt='foto5' width={94} height={90} className={style.memberPhotoMobile}/>
+                <div><Image src='/assets/videocall/foto2.jpg' alt='foto2' width={94} height={90} className={style.memberPhotoMobile}/><MicOffIcon style={{position:'absolute', left:'19%', top:'110%' , backgroundColor:'red', color:'white', borderRadius:'50%', padding:'2px', fontSize:'130%'}}/></div>
+                <div><Image src='/assets/videocall/foto3.jpg' alt='foto3' width={94} height={90} className={style.memberPhotoMobile}/><MicOffIcon style={{position:'absolute', left:'43%', top:'110%' , backgroundColor:'red', color:'white', borderRadius:'50%', padding:'2px', fontSize:'130%'}}/></div>
+                <div><Image src='/assets/videocall/foto4.jpg' alt='foto4' width={94} height={90} className={style.memberPhotoMobile}/><GraphicEqIcon style={{position:'absolute', left:'67%', top:'110%' , backgroundColor:'green', color:'white', borderRadius:'50%', padding:'2px', fontSize:'130%'}}/></div>
+                <div><Image src='/assets/videocall/foto5.jpg' alt='foto5' width={94} height={90} className={style.memberPhotoMobile}/><MicOffIcon style={{position:'absolute', left:'91%', top:'110%' , backgroundColor:'red', color:'white', borderRadius:'50%', padding:'2px', fontSize:'130%'}}/></div>
             </div>
 
             <Paper className={style.tableButtonsVideoCallMobile}>

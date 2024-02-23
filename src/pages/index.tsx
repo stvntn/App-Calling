@@ -21,8 +21,8 @@ const Home: NextPage = () => {
             <div className='mainBackground'>
                 <div className={style.mainAppContainer}>
                     <Menu />
-                    <VideoCall />
-                    <Chat />
+                    <VideoCall />                    
+                    <Chat />                        
                 </div>                    
             </div>
             <div className='mainMobile'>

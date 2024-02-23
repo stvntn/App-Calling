@@ -11,7 +11,7 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-export const NavbarMobile: React.FC<{handleSetMode: (mode: string) => void}>= (handleSetMode) => {
+export const NavbarMobile: React.FC<{handleSetMode: (mode: string) => void}>= ({handleSetMode}) => {
 
     return (
         <AppBar className={style.classNavbar}>
@@ -34,9 +34,9 @@ export const NavbarMobile: React.FC<{handleSetMode: (mode: string) => void}>= (h
                 </IconButton>
             </div>
             <div className={style.groupButtonHead}>                
-                <Button>Chat</Button>
-                <Button>File</Button>
-                <Button>Pole</Button>                
+                <Button className={style.buttomHeadGroup}>Chat</Button>
+                <Button className={style.buttomHeadGroup}>File</Button>
+                <Button className={style.buttomHeadGroup}>Pole</Button>                
             </div>
           </Toolbar>
         </AppBar>
