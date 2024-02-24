@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Paper from '@mui/material/Paper'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
-import ListItemText from '@mui/material/ListItemText'
+import ListItemText from '@mui/material/ListItemText' 
 import ListItem from '@mui/material/ListItem'
 import List from '@mui/material/List'
 import Typography from '@mui/material/Typography'
@@ -18,7 +18,6 @@ import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import SendIcon from '@mui/icons-material/Send';
 
 export const ChatMobile: React.FC = () => {
-
     const [inputText, setInputText] = useState('');
     const [messages, setMessages] = useState([
         { texto: 'Yes, It will decrease the loading 👍', autor: 'You', hora: '12:04 pm' },        
@@ -45,14 +44,12 @@ export const ChatMobile: React.FC = () => {
         if (div) {
             div.scrollTop = div?.scrollHeight;
         }        
-    }
-    
-    return (
-        
-        <div className={style.classChat}>
+    } 
 
-            {/* chat1 */}
-            <List> 
+    return (  
+        <div className={style.classChat}>
+            {/* chat1 */}     
+            <List className={style.classForList}> 
             <div style={{display:'flex'}}>
                 <Avatar sx={{marginRight:'10px', marginTop:'10px'}}>
                     <Image src='/assets/chat/Avatar1.png' alt='avatar1' width={46} height={46} />

@@ -268,9 +268,8 @@
     /* NavbarMobile */
 
 .classNavbar{
-    background-color: rgba(74, 87, 103, 1);
-    position: static;
-    
+    background-color: rgba(129, 186, 255, 0.5);    
+    position: static;   
 }
 
 .classToolbar{
@@ -301,9 +300,13 @@
     /* ChatMobile */
 .classChat{    
     padding: 0px 20px;
-    padding-bottom: 10px;
+    padding-bottom: 10px; 
+    background-color: rgba(129, 186, 255, 0.01);   
+}
+
+.classForList{
     overflow-x: auto;
-    max-height: 450px;    
+    max-height: 400px;
 }
 
     /* VideoCallMobile */
