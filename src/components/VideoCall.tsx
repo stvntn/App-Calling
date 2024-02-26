@@ -80,10 +80,10 @@ export const VideoCall: React.FC = () => {
                     </div>    
                 </div>
                 <div className={style.memberVideocall}>
-                    <div><Image src='/assets/videocall/foto2.jpg' alt='foto2' width={50} height={50} className={style.memberPhoto}/><MicOffIcon style={{position:'absolute', right:'5%', top:'13%' , backgroundColor:'red', color:'white', borderRadius:'50%', padding:'2px', fontSize:'100%'}}/></div>
-                    <div><Image src='/assets/videocall/foto3.jpg' alt='foto3' width={50} height={50} className={style.memberPhoto}/><MicOffIcon style={{position:'absolute', right:'5%', top:'38%' , backgroundColor:'red', color:'white', borderRadius:'50%', padding:'2px', fontSize:'100%'}}/></div>
-                    <div><Image src='/assets/videocall/foto4.jpg' alt='foto4' width={50} height={50} className={style.memberPhoto}/><GraphicEqIcon style={{position:'absolute', right:'5%', top:'62%' , backgroundColor:'green', color:'white', borderRadius:'50%', padding:'2px', fontSize:'100%'}}/></div>
-                    <div><Image src='/assets/videocall/foto5.jpg' alt='foto5' width={50} height={50} className={style.memberPhoto}/><MicOffIcon style={{position:'absolute', right:'5%', top:'88%' , backgroundColor:'red', color:'white', borderRadius:'50%', padding:'2px', fontSize:'100%'}}/></div>
+                    <div className={style.icoMemberVideoCall}><Image src='/assets/videocall/foto2.jpg' alt='foto2' width={50} height={50} className={style.memberPhoto}/><MicOffIcon style={{position:'absolute', right:'5%', top:'55%' , backgroundColor:'red', color:'white', borderRadius:'50%', padding:'2px', width: '25%', height:'20%'}}/></div>
+                    <div className={style.icoMemberVideoCall}><Image src='/assets/videocall/foto3.jpg' alt='foto3' width={50} height={50} className={style.memberPhoto}/><MicOffIcon style={{position:'absolute', right:'5%', top:'55%' , backgroundColor:'red', color:'white', borderRadius:'50%', padding:'2px', width: '25%', height:'20%'}}/></div>
+                    <div className={style.icoMemberVideoCall}><Image src='/assets/videocall/foto4.jpg' alt='foto4' width={50} height={50} className={style.memberPhoto}/><GraphicEqIcon style={{position:'absolute', right:'5%', top:'55%' , backgroundColor:'green', color:'white', borderRadius:'50%', padding:'2px', width: '25%', height:'20%'}}/></div>
+                    <div className={style.icoMemberVideoCall}><Image src='/assets/videocall/foto5.jpg' alt='foto5' width={50} height={50} className={style.memberPhoto}/><MicOffIcon style={{position:'absolute', right:'5%', top:'55%' , backgroundColor:'red', color:'white', borderRadius:'50%', padding:'2px', width: '25%', height:'20%'}}/></div>
                 </div>
             </div>
             <div className={style.footVideocall}>

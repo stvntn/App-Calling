@@ -17,10 +17,10 @@ export const NavbarMobile: React.FC<{handleSetMode: (mode: string) => void}>= ({
         <AppBar className={style.classNavbar}>
           <Toolbar className={style.classToolbar}>
             <div className={style.headToolbar}>
-                <IconButton onClick={() => handleSetMode('video')} style={{width:'25px', height:'25px', backgroundColor:'rgba(107, 124, 146, 1)', borderRadius:'20%'}}>
-                    <ArrowBackIosNewIcon fontSize='small' color='primary' />
+                <IconButton onClick={() => handleSetMode('video')} style={{width:'25px', height:'25px', backgroundColor: 'rgba(129, 186, 255, 0.5)', borderRadius:'20%', marginRight:'10px'}}>
+                    <ArrowBackIosNewIcon color='primary' style={{fontSize:'14px'}}/>
                 </IconButton>
-                <Typography className={style.tittleNavbar}>
+                <Typography style={{flexGrow:'1', fontSize:'21px'}}>
                     Design Critique
                 </Typography>
                 <IconButton>

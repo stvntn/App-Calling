@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from '../styles/Home.module.css'
-
+import { styled } from '@mui/material/styles';
 
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
@@ -11,7 +11,7 @@ import ListItemText from '@mui/material/ListItemText'
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import LinearProgress from '@mui/material/LinearProgress';
+import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 
 import Image from 'next/image';
 
@@ -22,6 +22,19 @@ import IconButton from '@mui/material/IconButton'
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import SendIcon from '@mui/icons-material/Send';
 import { Participants } from './Participants';
+
+const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+    height: 5,
+    borderRadius: 5,
+    [`&.${linearProgressClasses.colorPrimary}`]: {
+      backgroundColor: '#FFFFFF20',
+      borderRadius: 5,
+    },
+    [`& .${linearProgressClasses.bar}`]: {
+      borderRadius: 5,
+      backgroundColor: '#ffffff',
+    },
+}));
 
 export const Chat: React.FC = () => {
     
@@ -80,11 +93,11 @@ export const Chat: React.FC = () => {
                     </Typography>
                     <Divider sx={{mb:'10px', width:'100%', bgcolor:'rgba(255, 255, 255, 0.5)'}}/>
                     <div className={style.firstSliderChat}>
-                        <LinearProgress color="primary" variant="determinate" value={25} />
+                        <BorderLinearProgress variant="determinate" value={25} />
                         <Typography color='rgba(255, 255, 255, 0.5)' fontSize='12px'>Illustrations</Typography>
                     </div>
                     <div className={style.secondSliderChat}>
-                        <LinearProgress color="primary" variant="determinate" value={75} />
+                        <BorderLinearProgress variant="determinate" value={75} />
                         <Typography color='rgba(255, 255, 255, 0.5)' fontSize='12px'>Images</Typography>
                     </div>
                 </div>
