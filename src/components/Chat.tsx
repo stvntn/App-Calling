@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import style from '../styles/Home.module.css'
 import { styled } from '@mui/material/styles';
 
@@ -23,7 +23,7 @@ import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import SendIcon from '@mui/icons-material/Send';
 import { Participants } from './Participants';
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
+const BorderLinearProgress = styled(LinearProgress)(({  }) => ({
     height: 5,
     borderRadius: 5,
     [`&.${linearProgressClasses.colorPrimary}`]: {
@@ -37,12 +37,17 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
 }));
 
 export const Chat: React.FC = () => {
-    
+    interface Message {
+    texto: string;
+    autor: string;
+    hora: string;
+    }
+
     const [inputText, setInputText] = useState('');
-    const [messages, setMessages] = useState([
-        { texto: 'Yes, It will decrease the loading 👍', autor: 'You', hora: '12:04 pm' },        
-    ]);
-    const [showParticipants, setShowParticipants] = useState(false); // Step  2
+    const [messages, setMessages] = useState<Message[]>([]);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+    
+    const [showParticipants, setShowParticipants] = useState(false);
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInputText(event.target.value);
@@ -54,23 +59,35 @@ export const Chat: React.FC = () => {
             const hours = now.getHours().toString().padStart(2, '0');
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const timeString = `${hours}:${minutes}`;    
-            setMessages([...messages, { texto: inputText, autor: 'You', hora: timeString }]);    
-            scrollToButtonChat();
+            setMessages([...messages, { texto: inputText, autor: 'You', hora: timeString }]); 
             setInputText('');
         }
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+    
+    const scrollToBottom = () => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            handleSendMessage();
+        }
+    };
+
+    const handleInsertImage = () => {
+        console.log('Insertar imagen');
     };
 
     const toggleParticipants = () => {
         setShowParticipants(!showParticipants);
     };
 
-    const scrollToButtonChat = () => {
-        let div = document.getElementById('chatEscritorio');
-        if (div) {
-            div.scrollTop = div?.scrollHeight;
-        }        
-    }
-    
     return (        
         <div className={style.firstSectionChat}>
             <div className={style.headButtons}>
@@ -88,22 +105,22 @@ export const Chat: React.FC = () => {
             {!showParticipants && 
             <>
                 <div className={style.secondSectionChat}>
-                    <Typography color='primary' fontSize='14px' mb='10px'>
+                    <Typography style={{color:'white', fontSize:'14px', marginBottom:'10px'}}>
                         Use of Graphics
                     </Typography>
                     <Divider sx={{mb:'10px', width:'100%', bgcolor:'rgba(255, 255, 255, 0.5)'}}/>
                     <div className={style.firstSliderChat}>
                         <BorderLinearProgress variant="determinate" value={25} />
-                        <Typography color='rgba(255, 255, 255, 0.5)' fontSize='12px'>Illustrations</Typography>
+                        <Typography style={{color:'rgba(255, 255, 255, 0.5)', fontSize:'12px'}}>Illustrations</Typography>
                     </div>
                     <div className={style.secondSliderChat}>
                         <BorderLinearProgress variant="determinate" value={75} />
-                        <Typography color='rgba(255, 255, 255, 0.5)' fontSize='12px'>Images</Typography>
+                        <Typography style={{color:'rgba(255, 255, 255, 0.5)', fontSize:'12px'}}>Images</Typography>
                     </div>
                 </div>
-                <div style={{ width: '100%', marginTop:'20px' }}>
+                <div style={{ width: '100%', marginTop:'20px', color:'white' }}>
                     <Divider>
-                        <Typography color='primary' fontSize='12px'>
+                        <Typography style={{color:'white', fontSize:'12px'}}>
                             Messages
                         </Typography>
                     </Divider>
@@ -123,10 +140,10 @@ export const Chat: React.FC = () => {
                             <ListItemText primary='Caesy' style={{color:'white'}}/>           
                             <Paper style={{backgroundColor:'rgba(74, 87, 103, 1)', borderRadius:'0px 6px 6px 6px'}}>
                                 <ListItem sx={{display:'flex', justifyContent:'space-between'}}>                                
-                                    <Typography fontSize='12px' style={{color:'white'}}>                            
+                                    <Typography style={{color:'white', fontSize:'12px'}}>                            
                                         Hello Guys! Whats your opinion?                                
                                     </Typography>
-                                    <Typography fontSize='8px' marginLeft='5px' color='grey'>
+                                    <Typography style={{fontSize:'8px', marginLeft:'5px', color:'rgba(191, 191, 191, 1)'}}>
                                             12:02 pm
                                     </Typography>
                                 </ListItem>
@@ -142,10 +159,10 @@ export const Chat: React.FC = () => {
                             <ListItemText primary='John' style={{color:'white'}}/>           
                             <Paper style={{backgroundColor:'rgba(74, 87, 103, 1)', borderRadius:'0px 6px 6px 6px'}}>
                                 <ListItem sx={{display:'flex', justifyContent:'space-between'}}>                                
-                                    <Typography fontSize='12px' style={{color:'white'}}>                            
+                                    <Typography style={{color:'white', fontSize:'12px'}}>                            
                                         Images are better.                              
                                     </Typography>
-                                    <Typography fontSize='8px' marginLeft='5px' color='grey'>
+                                    <Typography style={{fontSize:'8px', marginLeft:'5px', color:'rgba(191, 191, 191, 1)'}}>
                                         12:03 pm
                                     </Typography>
                                 </ListItem>
@@ -158,10 +175,10 @@ export const Chat: React.FC = () => {
                             <ListItemText primary='You' style={{color:'white', display:'flex', justifyContent:'end'}}/>           
                             <Paper style={{backgroundColor:'rgba(74, 87, 103, 1)', borderRadius:'6px 0px 6px 6px'}}>
                                 <ListItem sx={{display:'flex', justifyContent:'space-between'}}>                                
-                                    <Typography fontSize='12px' style={{color:'white'}}>                            
+                                    <Typography style={{color:'white', fontSize:'12px'}}>                            
                                         Yes, It will decrease the loading 👍                             
                                     </Typography>
-                                    <Typography fontSize='8px' marginLeft='5px' color='grey'>
+                                    <Typography style={{fontSize:'8px', marginLeft:'5px', color:'rgba(191, 191, 191, 1)'}}>
                                         12:04 pm
                                     </Typography>
                                 </ListItem>
@@ -177,10 +194,10 @@ export const Chat: React.FC = () => {
                             <ListItemText primary='Jack' style={{color:'white'}}/>           
                             <Paper style={{backgroundColor:'rgba(74, 87, 103, 1)', borderRadius:'0px 6px 6px 6px'}}>
                                 <ListItem sx={{display:'flex', justifyContent:'space-between'}}>                                
-                                    <Typography fontSize='12px' style={{color:'white'}}>                            
+                                    <Typography style={{color:'white', fontSize:'12px'}}>                            
                                         Anyone is up for illustrations. I think there are less relatable images according to our brand.                                
                                     </Typography>
-                                    <Typography fontSize='8px' marginLeft='5px' color='grey'>
+                                    <Typography style={{fontSize:'8px', marginLeft:'5px', color:'rgba(191, 191, 191, 1)'}}>
                                         12:05 pm
                                     </Typography>
                                 </ListItem>
@@ -190,19 +207,15 @@ export const Chat: React.FC = () => {
 
                     {messages.map((message, index) => (
                         <div key={index} style={{display:'flex', marginTop:'10px', justifyContent: message.autor === 'You' ? 'end' : 'start'}}>
-                            {message.autor !== 'You' && (
-                                <Avatar sx={{marginRight:'10px', marginTop:'10px'}}>
-                                    <Image src='/assets/chat/Avatar1.png' alt='avatar' width={46} height={46} />
-                                </Avatar>
-                            )}
+                            {message.autor !== 'You'}
                             <Box>
-                                <ListItemText primary={message.autor} style={{color:'white'}}/>
+                                <ListItemText primary={message.autor} style={{color:'white', display:'flex', justifyContent:'end'}}/>
                                 <Paper style={{backgroundColor:'rgba(74,  87,  103,  1)', borderRadius:'6px  0px  6px  6px'}}>
                                     <ListItem sx={{display:'flex', justifyContent:'space-between'}}>                                
-                                        <Typography fontSize='12px' style={{color:'white'}}>
+                                        <Typography style={{color:'white', fontSize:'12px'}}>
                                             {message.texto}
                                         </Typography>
-                                        <Typography fontSize='8px' marginLeft='5px' color='grey'>
+                                        <Typography style={{fontSize:'8px', marginLeft:'5px', color:'rgba(191, 191, 191, 1)'}}>
                                             {message.hora}
                                         </Typography>
                                     </ListItem>
@@ -211,16 +224,19 @@ export const Chat: React.FC = () => {
                         </div>
                     ))} 
 
-                    <Box display='flex' marginTop='20px' sx={{alignItems:'center'}}>
-                        <Image src='/assets/chat/load.svg' alt='load' width={40} height={40} />
-                        <Typography fontSize='10px' color='grey'>                
-                            John is typing..
-                        </Typography>
-                    </Box>               
+                    {inputText && (
+                        <Box display='flex' marginTop='20px' sx={{alignItems:'center'}}>
+                            <Image src='/assets/chat/load.svg' alt='load' width={40} height={40} />
+                            <Typography style={{fontSize:'10px', color:'rgba(191, 191, 191, 1)'}}>                
+                                John is typing..
+                            </Typography>
+                        </Box> 
+                    )}
+                    <div ref={messagesEndRef} />              
                 </List>
                  
-                <Paper style={{backgroundColor:'rgba(53, 70, 87, 1)', display:'flex', alignItems:'center'}}>
-                    <IconButton>
+                <Paper style={{backgroundColor:'rgba(129, 186, 255, 0.5)', display:'flex', alignItems:'center'}}>
+                    <IconButton onClick={handleInsertImage}>
                         <InsertPhotoIcon style={{color:'white'}}/>
                     </IconButton>
                     <Divider color="white" sx={{ height: 28, m: 0.5 }} orientation="vertical" />
@@ -228,7 +244,8 @@ export const Chat: React.FC = () => {
                     <InputBase
                         placeholder='Write message here'
                         value={inputText}
-                        onChange={handleInputChange}                    
+                        onChange={handleInputChange}
+                        onKeyDown={handleKeyDown}                     
                         style={{color:'white', fontSize:'12px'}}
                     />                
                     </FormControl>

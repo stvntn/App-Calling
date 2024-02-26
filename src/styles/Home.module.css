@@ -249,9 +249,7 @@
 
 .secondSliderChat{
     background-color: rgba(255, 255, 255, 0.1);    
-    margin-top: 5px;
-    /* margin-right: 5px;
-    margin-left: 5px; */
+    margin-top: 5px;    
     border-radius: 8px;
     padding: 10px 5px;    
 }
@@ -273,7 +271,7 @@
     /* NavbarMobile */
 
 .classNavbar{
-    background-color: rgba(129, 186, 255, 0.5);    
+    background-color: rgba(76, 104, 138, 1);    
     position: static;   
 }
 
@@ -305,13 +303,9 @@
     /* ChatMobile */
 .classChat{    
     padding: 0px 20px;
-    padding-bottom: 10px; 
-    background-color: rgba(129, 186, 255, 0.01);   
-}
-
-.classForList{
+    padding-bottom: 10px;
     overflow-x: auto;
-    max-height: 400px;
+    max-height: 400px;   
 }
 
     /* VideoCallMobile */
@@ -320,7 +314,7 @@
     padding: 5px 15px;
     margin-bottom: 10px;
     align-items: center;
-    background-color: rgba(129, 186, 255, 0.5);
+    background-color: rgb(76, 104, 138, 1);
 }
 
 .mainVideoCallMobile{

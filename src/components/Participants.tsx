@@ -44,9 +44,7 @@ import Avatar from '@mui/material/Avatar'
                     <ListItem
                         key={member.name}
                     >
-                        <Avatar>
-                            <Image src= {member.image} alt='{member.name}' width={46} height={46} />
-                        </Avatar >
+                        <Avatar src={member.image}/>
                         <ListItemText 
                             primary={`${member.name} ${member.lastName}`} 
                             style={{

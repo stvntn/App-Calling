@@ -4,14 +4,21 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import { IconButton } from '@mui/material'
-import Button from '@mui/material/Button';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
+  
 export const NavbarMobile: React.FC<{handleSetMode: (mode: string) => void}>= ({handleSetMode}) => {
+   
+    const [value, setValue] = React.useState('one');
+
+    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+        setValue(newValue);
+    };
 
     return (
         <AppBar className={style.classNavbar}>
@@ -33,10 +40,17 @@ export const NavbarMobile: React.FC<{handleSetMode: (mode: string) => void}>= ({
                     <MoreVertIcon fontSize='small' color='primary' />
                 </IconButton>
             </div>
-            <div className={style.groupButtonHead}>                
-                <Button className={style.buttomHeadGroup}>Chat</Button>
-                <Button className={style.buttomHeadGroup}>File</Button>
-                <Button className={style.buttomHeadGroup}>Pole</Button>                
+            <div>
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    aria-label="ChatMobile"
+                    style={{width:"100%", display:'flex', justifyContent:'space-around'}}
+                >
+                    <Tab value="one" label="Chat" wrapped style={{ textTransform:'none', fontSize:'16px', fontWeight:'400'}} />
+                    <Tab value="two" label="File" style={{ textTransform:'none', fontSize:'16px', fontWeight:'400'}} />
+                    <Tab value="three" label="Pole" style={{ textTransform:'none', fontSize:'16px', fontWeight:'400'}} />
+                </Tabs>
             </div>
           </Toolbar>
         </AppBar>
