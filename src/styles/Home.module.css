@@ -329,13 +329,16 @@
 
 .iconMemberVideoCallMobile{
     position: relative;
+    width: 24%;
+    aspect-ratio: 1;
+    height: auto;
 }
 
 .overImage{
     display: flex;
     position: absolute;    
     background-color: rgba(0, 0, 0, 0.63);
-    width: 320px;
+    width: 90%;
     padding: 5px 15px;
     align-items: center;
     top: 83%;
@@ -350,6 +353,9 @@
 
 .memberPhotoMobile{
     border-radius: 5%;
+    width: 100%;
+    aspect-ratio: 1;
+    height: auto;
 }
 
 .tableButtonsVideoCallMobile{

@@ -48,7 +48,7 @@ export const VideoCallMobile: React.FC<{handleSetMode: (mode: string) => void}>=
             </Paper>
 
             <div className={style.foto1Videocalling}>
-                <Image src='/assets/videocall/foto1.jpg' alt='foto1' width={400} height={430} style={{borderRadius:'2%'}}/>
+                <Image src='/assets/videocall/foto1.jpg' alt='foto1' width={400} height={430} style={{borderRadius:'2%', width:'100%'}}/>
                 <Paper className={style.overImage}>
                     <Image src='/assets/videocall/eq.svg' alt='eq' width={40} height={25} style={{marginRight:'10px'}} />
                     <div >
